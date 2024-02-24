@@ -1,0 +1,2 @@
+# word2pdf
+使用libreoffice+python实现的高效word转pdf项目，转换后的pdf容错率很低
