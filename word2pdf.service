@@ -1,0 +1,12 @@
+[Unit]
+Description=word2pdf Service
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/usr/local/word2pdf/
+ExecStart=python3 /usr/local/word2pdf/script.py
+
+[Install]
+WantedBy=multi-user.target

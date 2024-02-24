@@ -1,0 +1,5 @@
+/.venv
+/.git
+/.idea
+/resource/docx/*
+/resource/pdf/*
