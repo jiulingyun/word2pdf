@@ -10,7 +10,7 @@ cur_dir=$(pwd)
 install(){
     systemctl stop word2pdf
     cd /usr/local/
-    last_version=$(curl -Ls "https://raw.githubusercontent.com/jiulingyun/word2pdf/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+    last_version=$(curl -Ls "https://raw.githubusercontent.com/jiulingyun/word2pdf/releases" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
     if [[ ! -n "$last_version" ]]; then
         echo -e "${red}检测 word2pdf 版本失败，可能是超出 Github API 限制，请稍后再试，或手动指定 word2pdf 版本安装${plain}"
         exit 1

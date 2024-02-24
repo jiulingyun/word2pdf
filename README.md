@@ -12,7 +12,7 @@ dnf install python3
 ```
 ## 一键安装脚本
 ```shell
-bash <(curl -Ls https://gitee.com/hugo-yang/word2pdf/master/install.sh)
+bash <(curl -Ls raw.githubusercontent.com/jiulingyun/word2pdf/master/install.sh)
 ```
 ## 使用方法
 启动服务
@@ -22,6 +22,10 @@ systemctl start word2pdf
 停止服务
 ```shell
 systemctl stop word2pdf
+```
+重启服务
+```shell
+systemctl restart word2pdf
 ```
 设置开机自启动
 ```shell

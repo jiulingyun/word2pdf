@@ -42,10 +42,9 @@ def handle_decoded_file():
 
     # 检查解码后的数据是否为doc或docx文件
     file_type = magic.from_buffer(decoded_data)
-    if file_type == 'application/zip' or file_type == ('application/vnd.openxmlformats-officedocument'
-                                                       '.wordprocessingml.document'):
+    if file_type == 'application/zip' or file_type == 'application/octet-stream':
         # 提取或指定文件名后缀
-        extension = '.doc' if file_type == 'application/zip' else '.docx'
+        extension = '.docx' if file_type == 'application/zip' else '.docx'
 
         # 将文件内容写入磁盘
         docxName = word2pdf.generate_random_strings(12) + extension
