@@ -24,6 +24,20 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 port = int(os.environ.get('PORT', config['server']['port']))
 
+# 文件类型限定变量数组
+file_type_array = [
+    'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+    'application/vnd.openxmlformats-officedocument.wordprocessingml.template',
+    'application/vnd.ms-word.document.macroEnabled.12',
+    'application/vnd.ms-word.template.macroEnabled.12',
+    'application/vnd.ms-word',
+    'application/msword',
+    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+    'application/vnd.ms-excel',
+    'application/zip',
+    'application/octet-stream'
+]
+
 
 # 处理上传的文件
 @app.route('/api/word2pdf', methods=['POST'])
@@ -42,9 +56,10 @@ def handle_decoded_file():
 
     # 检查解码后的数据是否为doc或docx文件
     file_type = magic.from_buffer(decoded_data)
-    if file_type == 'application/zip' or file_type == 'application/octet-stream':
+
+    if file_type in file_type_array:
         # 提取或指定文件名后缀
-        extension = '.docx' if file_type == 'application/zip' else '.docx'
+        extension = '.docx'
 
         # 将文件内容写入磁盘
         docxName = word2pdf.generate_random_strings(12) + extension
