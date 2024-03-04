@@ -12,7 +12,7 @@ dnf install python3
 ```
 ## 一键安装脚本
 ```shell
-bash <(curl -Ls raw.githubusercontent.com/jiulingyun/word2pdf/master/install.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/jiulingyun/word2pdf/master/install.sh)
 ```
 ## 使用方法
 启动服务
