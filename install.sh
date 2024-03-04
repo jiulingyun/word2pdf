@@ -32,6 +32,14 @@ install(){
     # 将该目录下的word2pdf.service文件复制到系统服务目录
     cp word2pdf.service /etc/systemd/system/word2pdf.service
 
+    # 安装依赖包
+    dnf install libreoffice
+
+    #安装python3
+    dnf install python3
+
+    pip3 install -r requirements.txt
+
     # 刷新服务缓存
     systemctl daemon-reload
 
