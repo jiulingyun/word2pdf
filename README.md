@@ -35,3 +35,20 @@ systemctl enable word2pdf
 ```shell
 systemctl disable word2pdf
 ```
+### 接口调用
+其中headers中的```Authorization```参数就是配置文件`settings.json`中的```key```参数
+
+```
+POST 你的IP:5000/api/word2pdf
+headers:
+Authorization: DOoGAfpXpxcyGQW5koi9miRFgYGIkMB0
+body:
+{
+    "doc_file": "经过base64编码的doc文件内容"
+}
+响应:
+{
+    "code": 1,
+    "file_url": "pdf文件的url"
+}
+```
